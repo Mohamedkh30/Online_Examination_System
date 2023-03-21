@@ -1,0 +1,14 @@
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\bin\Debug\Examination App.exe.config
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\bin\Debug\Examination App.exe
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\bin\Debug\Examination App.pdb
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.AssemblyReference.cache
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.SuggestedBindingRedirects.cache
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination_App.Properties.Resources.resources
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.GenerateResource.cache
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.CoreCompileInputs.cache
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination App.exe
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination App.pdb
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination_App.LoginForm.resources
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination_App.StudentForm.resources
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination_App.GradeForm.resources
+F:\learn\iti\3)backend\advanced database\Project\Examination App\Examination App\obj\Debug\Examination_App.NewAccount.resources
