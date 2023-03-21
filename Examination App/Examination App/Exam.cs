@@ -19,7 +19,7 @@ namespace Examination_App
 
         private void Exam_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
