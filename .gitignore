@@ -1,0 +1,28 @@
+# Visual Studio files
+*.sln
+*.suo
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.csproj
+*.csproj.user
+*.obj
+*.pdb
+*.cache
+*.ilk
+*.log
+*.vs/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+bin/
+obj/
+
+# Other files
+[Tt]humbs.db
+*.DS_Store
+*.userprefs
+*.bak
+*.tmp
