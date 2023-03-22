@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exam.cs">
+    <Compile Include="ExamForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exam.Designer.cs">
-      <DependentUpon>Exam.cs</DependentUpon>
+    <Compile Include="ExamForm.Designer.cs">
+      <DependentUpon>ExamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -84,14 +84,14 @@
     <Compile Include="StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Topic.cs">
+    <Compile Include="TopicForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Topic.Designer.cs">
-      <DependentUpon>Topic.cs</DependentUpon>
+    <Compile Include="TopicForm.Designer.cs">
+      <DependentUpon>TopicForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Exam.resx">
-      <DependentUpon>Exam.cs</DependentUpon>
+    <EmbeddedResource Include="ExamForm.resx">
+      <DependentUpon>ExamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Topic.resx">
-      <DependentUpon>Topic.cs</DependentUpon>
+    <EmbeddedResource Include="TopicForm.resx">
+      <DependentUpon>TopicForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

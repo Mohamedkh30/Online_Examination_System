@@ -1,6 +1,6 @@
 ﻿namespace Examination_App
 {
-    partial class Exam
+    partial class ExamForm
     {
         /// <summary>
         /// Required designer variable.
