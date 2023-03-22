@@ -107,3 +107,7 @@ else
 
 -- DeleteInsDepCrRelationByCr 3
 -----------------------------------------------------------------------------------------------------------------------
+create proc GetStudentCourses @studId int
+as
+select Cr_Name from Course as c, Stu_Courses as s
+where  s.St_Id=@StuId and c.cr_id= s.cr_id

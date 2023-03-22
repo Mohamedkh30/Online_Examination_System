@@ -68,3 +68,12 @@ GO
 
 
 --	Report that takes exam number and the student ID then returns the Questions in this exam with the student answers
+
+	--------------------------------------------
+--stored of last report 
+
+ create proc Select_Student_Answer @Student_Id varchar(4) , @Exam_Num varchar(3)
+ as 
+ declare @Exam_Ansewrs table (answer varchar(700))
+ insert into @Exam_Ansewrs (answer) select  Answer from Stu_Exam_Question where St_Id = @Student_Id and Exam_Num = @Exam_Num
+ select * from  @Exam_Ansewrs
