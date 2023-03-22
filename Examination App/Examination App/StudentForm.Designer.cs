@@ -142,6 +142,7 @@
             this.UpdateBtn.TabIndex = 9;
             this.UpdateBtn.Text = "Update Info";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // ExamBtn
             // 
@@ -151,6 +152,7 @@
             this.ExamBtn.TabIndex = 10;
             this.ExamBtn.Text = "Take new Exam";
             this.ExamBtn.UseVisualStyleBackColor = true;
+            this.ExamBtn.Click += new System.EventHandler(this.ExamBtn_Click);
             // 
             // GradeBtn
             // 
@@ -160,6 +162,7 @@
             this.GradeBtn.TabIndex = 11;
             this.GradeBtn.Text = "Show Previous Grade";
             this.GradeBtn.UseVisualStyleBackColor = true;
+            this.GradeBtn.Click += new System.EventHandler(this.GradeBtn_Click);
             // 
             // StudentForm
             // 

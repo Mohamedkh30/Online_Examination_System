@@ -301,5 +301,513 @@ namespace Examination_App
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("AuthStudent", emailParameter, passParameter);
         }
+    
+        public virtual ObjectResult<SelectStudentByEmPass_Result> SelectStudentByEmPass(string studentEmail, string studentPassword)
+        {
+            var studentEmailParameter = studentEmail != null ?
+                new ObjectParameter("StudentEmail", studentEmail) :
+                new ObjectParameter("StudentEmail", typeof(string));
+    
+            var studentPasswordParameter = studentPassword != null ?
+                new ObjectParameter("StudentPassword", studentPassword) :
+                new ObjectParameter("StudentPassword", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectStudentByEmPass_Result>("SelectStudentByEmPass", studentEmailParameter, studentPasswordParameter);
+        }
+    
+        public virtual ObjectResult<SelectStudentByEmail_Result> SelectStudentByEmail(string studentEmail)
+        {
+            var studentEmailParameter = studentEmail != null ?
+                new ObjectParameter("StudentEmail", studentEmail) :
+                new ObjectParameter("StudentEmail", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectStudentByEmail_Result>("SelectStudentByEmail", studentEmailParameter);
+        }
+    
+        public virtual ObjectResult<SelectStudentById_Result> SelectStudentById(Nullable<int> studentId)
+        {
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectStudentById_Result>("SelectStudentById", studentIdParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteCourseByID(Nullable<int> courseID)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteCourseByID", courseIDParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteCourseByName(string courseName)
+        {
+            var courseNameParameter = courseName != null ?
+                new ObjectParameter("CourseName", courseName) :
+                new ObjectParameter("CourseName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteCourseByName", courseNameParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteExam(Nullable<int> examID)
+        {
+            var examIDParameter = examID.HasValue ?
+                new ObjectParameter("ExamID", examID) :
+                new ObjectParameter("ExamID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteExam", examIDParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteStudentByID(Nullable<int> studentID)
+        {
+            var studentIDParameter = studentID.HasValue ?
+                new ObjectParameter("StudentID", studentID) :
+                new ObjectParameter("StudentID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteStudentByID", studentIDParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteStudentByName(string studentName)
+        {
+            var studentNameParameter = studentName != null ?
+                new ObjectParameter("StudentName", studentName) :
+                new ObjectParameter("StudentName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteStudentByName", studentNameParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteTopicByCrIDTopName(Nullable<int> courseID, string topicName)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            var topicNameParameter = topicName != null ?
+                new ObjectParameter("TopicName", topicName) :
+                new ObjectParameter("TopicName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteTopicByCrIDTopName", courseIDParameter, topicNameParameter);
+        }
+    
+        public virtual ObjectResult<string> DeleteTopicByName(string topicName)
+        {
+            var topicNameParameter = topicName != null ?
+                new ObjectParameter("TopicName", topicName) :
+                new ObjectParameter("TopicName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("DeleteTopicByName", topicNameParameter);
+        }
+    
+        public virtual ObjectResult<string> GetStudentCourses(Nullable<int> stuId)
+        {
+            var stuIdParameter = stuId.HasValue ?
+                new ObjectParameter("StuId", stuId) :
+                new ObjectParameter("StuId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("GetStudentCourses", stuIdParameter);
+        }
+    
+        public virtual ObjectResult<string> InsertNewCourse(string name)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("InsertNewCourse", nameParameter);
+        }
+    
+        public virtual ObjectResult<string> InsertNewExamToCourse(Nullable<int> courseID)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("InsertNewExamToCourse", courseIDParameter);
+        }
+    
+        public virtual ObjectResult<string> InsertNewStudent(string name, Nullable<int> departmentID, string email, string password)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var departmentIDParameter = departmentID.HasValue ?
+                new ObjectParameter("DepartmentID", departmentID) :
+                new ObjectParameter("DepartmentID", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("InsertNewStudent", nameParameter, departmentIDParameter, emailParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<string> InsertNewTopic(string topicName, Nullable<int> courseID)
+        {
+            var topicNameParameter = topicName != null ?
+                new ObjectParameter("TopicName", topicName) :
+                new ObjectParameter("TopicName", typeof(string));
+    
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("InsertNewTopic", topicNameParameter, courseIDParameter);
+        }
+    
+        public virtual ObjectResult<SelectAllCourses_Result> SelectAllCourses()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllCourses_Result>("SelectAllCourses");
+        }
+    
+        public virtual ObjectResult<SelectAllExams_Result> SelectAllExams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllExams_Result>("SelectAllExams");
+        }
+    
+        public virtual ObjectResult<SelectAllStudents_Result> SelectAllStudents()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllStudents_Result>("SelectAllStudents");
+        }
+    
+        public virtual ObjectResult<SelectAllTopics_Result> SelectAllTopics()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllTopics_Result>("SelectAllTopics");
+        }
+    
+        public virtual ObjectResult<SelectCourseById_Result> SelectCourseById(Nullable<int> courseID)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectCourseById_Result>("SelectCourseById", courseIDParameter);
+        }
+    
+        public virtual ObjectResult<SelectCourseByName_Result> SelectCourseByName(string courseName)
+        {
+            var courseNameParameter = courseName != null ?
+                new ObjectParameter("CourseName", courseName) :
+                new ObjectParameter("CourseName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectCourseByName_Result>("SelectCourseByName", courseNameParameter);
+        }
+    
+        public virtual ObjectResult<SelectCourseExams_Result> SelectCourseExams(Nullable<int> courseID)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectCourseExams_Result>("SelectCourseExams", courseIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> SelectCourseIDByTopicName(string topicName)
+        {
+            var topicNameParameter = topicName != null ?
+                new ObjectParameter("TopicName", topicName) :
+                new ObjectParameter("TopicName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SelectCourseIDByTopicName", topicNameParameter);
+        }
+    
+        public virtual ObjectResult<SelectCourseTopics_Result> SelectCourseTopics(Nullable<int> courseID)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectCourseTopics_Result>("SelectCourseTopics", courseIDParameter);
+        }
+    
+        public virtual ObjectResult<SelectExamById_Result> SelectExamById(Nullable<int> examID)
+        {
+            var examIDParameter = examID.HasValue ?
+                new ObjectParameter("ExamID", examID) :
+                new ObjectParameter("ExamID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectExamById_Result>("SelectExamById", examIDParameter);
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<string> StudentExamAnswers(Nullable<int> examID, Nullable<int> studentID, Nullable<int> questionID, string studendAnswer1, string studendAnswer2, string studendAnswer3, string studendAnswer4, string studendAnswer5, string studendAnswer6, string studendAnswer7, string studendAnswer8, string studendAnswer9, string studendAnswer10)
+        {
+            var examIDParameter = examID.HasValue ?
+                new ObjectParameter("examID", examID) :
+                new ObjectParameter("examID", typeof(int));
+    
+            var studentIDParameter = studentID.HasValue ?
+                new ObjectParameter("StudentID", studentID) :
+                new ObjectParameter("StudentID", typeof(int));
+    
+            var questionIDParameter = questionID.HasValue ?
+                new ObjectParameter("QuestionID", questionID) :
+                new ObjectParameter("QuestionID", typeof(int));
+    
+            var studendAnswer1Parameter = studendAnswer1 != null ?
+                new ObjectParameter("StudendAnswer1", studendAnswer1) :
+                new ObjectParameter("StudendAnswer1", typeof(string));
+    
+            var studendAnswer2Parameter = studendAnswer2 != null ?
+                new ObjectParameter("StudendAnswer2", studendAnswer2) :
+                new ObjectParameter("StudendAnswer2", typeof(string));
+    
+            var studendAnswer3Parameter = studendAnswer3 != null ?
+                new ObjectParameter("StudendAnswer3", studendAnswer3) :
+                new ObjectParameter("StudendAnswer3", typeof(string));
+    
+            var studendAnswer4Parameter = studendAnswer4 != null ?
+                new ObjectParameter("StudendAnswer4", studendAnswer4) :
+                new ObjectParameter("StudendAnswer4", typeof(string));
+    
+            var studendAnswer5Parameter = studendAnswer5 != null ?
+                new ObjectParameter("StudendAnswer5", studendAnswer5) :
+                new ObjectParameter("StudendAnswer5", typeof(string));
+    
+            var studendAnswer6Parameter = studendAnswer6 != null ?
+                new ObjectParameter("StudendAnswer6", studendAnswer6) :
+                new ObjectParameter("StudendAnswer6", typeof(string));
+    
+            var studendAnswer7Parameter = studendAnswer7 != null ?
+                new ObjectParameter("StudendAnswer7", studendAnswer7) :
+                new ObjectParameter("StudendAnswer7", typeof(string));
+    
+            var studendAnswer8Parameter = studendAnswer8 != null ?
+                new ObjectParameter("StudendAnswer8", studendAnswer8) :
+                new ObjectParameter("StudendAnswer8", typeof(string));
+    
+            var studendAnswer9Parameter = studendAnswer9 != null ?
+                new ObjectParameter("StudendAnswer9", studendAnswer9) :
+                new ObjectParameter("StudendAnswer9", typeof(string));
+    
+            var studendAnswer10Parameter = studendAnswer10 != null ?
+                new ObjectParameter("StudendAnswer10", studendAnswer10) :
+                new ObjectParameter("StudendAnswer10", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("StudentExamAnswers", examIDParameter, studentIDParameter, questionIDParameter, studendAnswer1Parameter, studendAnswer2Parameter, studendAnswer3Parameter, studendAnswer4Parameter, studendAnswer5Parameter, studendAnswer6Parameter, studendAnswer7Parameter, studendAnswer8Parameter, studendAnswer9Parameter, studendAnswer10Parameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateCourseIdOfExamByExamID(Nullable<int> newCourseID, Nullable<int> examID)
+        {
+            var newCourseIDParameter = newCourseID.HasValue ?
+                new ObjectParameter("NewCourseID", newCourseID) :
+                new ObjectParameter("NewCourseID", typeof(int));
+    
+            var examIDParameter = examID.HasValue ?
+                new ObjectParameter("ExamID", examID) :
+                new ObjectParameter("ExamID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateCourseIdOfExamByExamID", newCourseIDParameter, examIDParameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateCourseNameByID(Nullable<int> courseID, string name)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateCourseNameByID", courseIDParameter, nameParameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateCourseNameByName(string oldCourseName, string newCourseName)
+        {
+            var oldCourseNameParameter = oldCourseName != null ?
+                new ObjectParameter("OldCourseName", oldCourseName) :
+                new ObjectParameter("OldCourseName", typeof(string));
+    
+            var newCourseNameParameter = newCourseName != null ?
+                new ObjectParameter("NewCourseName", newCourseName) :
+                new ObjectParameter("NewCourseName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateCourseNameByName", oldCourseNameParameter, newCourseNameParameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateStudentByID(Nullable<int> studentId, string name, Nullable<int> departmentID, string email, string password)
+        {
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var departmentIDParameter = departmentID.HasValue ?
+                new ObjectParameter("DepartmentID", departmentID) :
+                new ObjectParameter("DepartmentID", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateStudentByID", studentIdParameter, nameParameter, departmentIDParameter, emailParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateStudentByName(string oldStudentName, string newStudentName, Nullable<int> departmentID, string email, string password)
+        {
+            var oldStudentNameParameter = oldStudentName != null ?
+                new ObjectParameter("OldStudentName", oldStudentName) :
+                new ObjectParameter("OldStudentName", typeof(string));
+    
+            var newStudentNameParameter = newStudentName != null ?
+                new ObjectParameter("NewStudentName", newStudentName) :
+                new ObjectParameter("NewStudentName", typeof(string));
+    
+            var departmentIDParameter = departmentID.HasValue ?
+                new ObjectParameter("DepartmentID", departmentID) :
+                new ObjectParameter("DepartmentID", typeof(int));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateStudentByName", oldStudentNameParameter, newStudentNameParameter, departmentIDParameter, emailParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateTopicCourseID(Nullable<int> courseID, string topicName)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            var topicNameParameter = topicName != null ?
+                new ObjectParameter("TopicName", topicName) :
+                new ObjectParameter("TopicName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateTopicCourseID", courseIDParameter, topicNameParameter);
+        }
+    
+        public virtual ObjectResult<string> UpdateTopicNameByName(string newTopicName, string oldTopicName)
+        {
+            var newTopicNameParameter = newTopicName != null ?
+                new ObjectParameter("NewTopicName", newTopicName) :
+                new ObjectParameter("NewTopicName", typeof(string));
+    
+            var oldTopicNameParameter = oldTopicName != null ?
+                new ObjectParameter("OldTopicName", oldTopicName) :
+                new ObjectParameter("OldTopicName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("UpdateTopicNameByName", newTopicNameParameter, oldTopicNameParameter);
+        }
     }
 }
