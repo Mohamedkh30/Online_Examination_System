@@ -15,6 +15,8 @@ namespace Examination_App
         public LoginForm()
         {
             InitializeComponent();
+            EmailTextBox.Text = "ali.abdullah@example.com";
+            PasswordTextBox.Text = "Password1";
         }
 
         private void SignUpBtn_Click(object sender, EventArgs e)
@@ -25,19 +27,39 @@ namespace Examination_App
 
         private void SignInBtn_Click(object sender, EventArgs e)
         {
-            //Examination_DBEntities context = new Examination_DBEntities();
+            Examination_DBEntities context = new Examination_DBEntities();
 
             string email = EmailTextBox.Text;
             string password = PasswordTextBox.Text;
 
             if (StudentRadioButton.Checked)
             {
-
+                var msg = context.AuthStudent(email, password).First();
+                if (msg == "Login Successful")
+                {
+                    StudentForm studentForm = new StudentForm();
+                    studentForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(msg);
+                }
             }
             else if (InstructorRadioButton.Checked)
             {
-                //string msg = context.AuthInstructor(email, password).ToString();
-                //MessageBox.Show(msg);
+                var msg = context.AuthInstructor(email, password).First();
+                if (msg == "Login Successful")
+                {
+                    InstructorForm instructorForm = new InstructorForm();
+                    instructorForm.Show();
+                    this.Hide();
+                    
+                }
+                else
+                {
+                    MessageBox.Show(msg);
+                }
             }
         }
     }

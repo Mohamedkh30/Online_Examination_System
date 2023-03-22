@@ -16,5 +16,10 @@ namespace Examination_App
         {
             InitializeComponent();
         }
+
+        private void StudentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

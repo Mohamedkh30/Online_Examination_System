@@ -128,6 +128,7 @@
             // 
             this.InstructorRadioButton.AutoSize = true;
             this.InstructorRadioButton.BackColor = System.Drawing.Color.Transparent;
+            this.InstructorRadioButton.Checked = true;
             this.InstructorRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.InstructorRadioButton.ForeColor = System.Drawing.Color.White;
             this.InstructorRadioButton.Location = new System.Drawing.Point(49, 165);
