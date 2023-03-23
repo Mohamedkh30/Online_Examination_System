@@ -39,22 +39,18 @@ namespace Examination_App
                 ExamForm examForm = new ExamForm();
                 examForm.ShowDialog();
             }
-            
-            
         }
 
         private void GradeBtn_Click(object sender, EventArgs e)
         {
-            if (SubjectComboBox.Text != "")
-            {
-                GradeForm gradeForm = new GradeForm();
-                gradeForm.ShowDialog();
-            }
+            GradeForm gradeForm = new GradeForm();
+            gradeForm.ShowDialog();
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            //open the update form
+            UpdateData updateDataForm = new UpdateData(dataContainer.id, "Student");
+            updateDataForm.ShowDialog();
         }
     }
 }

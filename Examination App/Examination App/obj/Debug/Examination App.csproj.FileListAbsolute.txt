@@ -56,3 +56,4 @@ C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examinatio
 C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.CopyComplete
 C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.exe
 C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.pdb
+F:\learn\iti\3)backend\advanced database\Project\New folder\Examination App\Examination App\obj\Debug\Examination_App.UpdateData.resources

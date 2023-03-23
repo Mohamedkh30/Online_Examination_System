@@ -25,9 +25,7 @@ namespace Examination_App
             dragging = false;
 
             Context = new Examination_DBEntities();
-        }
-        private void NewAccount_Load(object sender, EventArgs e)
-        {
+
             try
             {
                 var Depts = Context.SelectDepartments();
@@ -47,8 +45,8 @@ namespace Examination_App
         /***************************************************************************************/
         private void CreateAccBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (PositionDropList.Text == "" || NameBox.Text == "" || DeptBox.Text == "" || EmailBox.Text == "" || PasswordBox.Text == "")
                 {
                     MessageBox.Show("Please Enter Valid Information!", "Warning");
@@ -56,6 +54,7 @@ namespace Examination_App
                 else if (PositionDropList.Text == "Student")
                 {
                     New_Student = new Student();
+                    New_Student.Department = new Department();
                     New_Student.St_Name = NameBox.Text;
                     New_Student.Department.Dept_Name = DeptBox.Text;
                     New_Student.Email = EmailBox.Text;
@@ -74,11 +73,11 @@ namespace Examination_App
                 }
                 Context.SaveChanges();
                 MessageBox.Show("Success!", "Done");
-            }
-            catch
-            {
-                MessageBox.Show("Failed!", "Warning");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Failed!", "Warning");
+            //}
         }
 
 
