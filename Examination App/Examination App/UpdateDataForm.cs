@@ -34,19 +34,22 @@ namespace Examination_App
                 Instructor_Data(ID);
             }
 
+            try
+            {
+                var Depts = Context.SelectDepartments();
+                foreach (var dept in Depts)
+                {
+                    DeptBox.Items.Add(dept.Dept_Name);
+                }
+            }
+            catch
+            {
+                DeptBox.Items.Add("No Department Found!");
+            }
+
         }
 
-        private void UpdateDataWin_Load(object sender, EventArgs e)
-        {
-            //var Depts = Context.Departments.Select(d => d.Dept_Name);
-            //foreach (var dept in Depts)
-            //{
-            //    if (dept != null)
-            //    {
-            //        DeptBox.Items.Add(dept);
-            //    }
-            //}
-        }
+        
 
         /***************************************************************************************/
         // Display data
@@ -79,8 +82,8 @@ namespace Examination_App
         private void UpdateInfoBtn_Click(object sender, EventArgs e)
         {
             ID = int.Parse(IDBox.Text);
-            try
-            {
+            //try
+            //{
                 if (PosBox.Text == "Student")
                 {
                     var Query = Context.Students.Where(s => s.St_Id == ID).Select(s => s);
@@ -103,11 +106,11 @@ namespace Examination_App
 
                 Context.SaveChanges();
                 MessageBox.Show("Success!", "Done");
-            }
-            catch
-            {
-                MessageBox.Show("Failed!", "Warning");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Failed!", "Warning");
+            //}
         }
         /***************************************************************************************/
         // buttons hover
@@ -143,7 +146,8 @@ namespace Examination_App
                     Context.Instructors.Remove(instructor);
                 }
                 Context.SaveChanges();
-                MessageBox.Show("Success!", "Done");
+                MessageBox.Show("Account deleted sgin in again", "Done");
+                Application.Exit();
             }
             catch
             {
@@ -195,5 +199,5 @@ namespace Examination_App
             }
         }
     }
-    }
+    
 }
