@@ -16,7 +16,7 @@ namespace Examination_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GradeForm());
+            Application.Run(new QuestionForm());
         }
     }
 }

@@ -1,9 +1,5 @@
 
 
-
-
-
-
 --------------------------------------------
       -- Table Question Procedures 
 --------------------------------------------
@@ -11,7 +7,7 @@
 --  (1)  Select ----------
 
 -- (A) Dynamic Select
-
+--Select_Question 'Q_Id' , '10'
 CREATE PROC Select_Question 
                     @columnName VARCHAR(50)
 	               ,@columnValue VARCHAR(700)
@@ -31,7 +27,7 @@ EXEC (@sql)
 
 -- (A)  Select Based ON Primary Key
 
-ALTER PROC Select_Question_By_Id 
+create PROC Select_Question_By_Id 
      @Q_Id VARCHAR(3)
 	
 AS
@@ -42,13 +38,12 @@ DECLARE @sql NVARCHAR(MAX)
 EXEC (@sql)
 
 --  (2)  inseret 
-alter table Question add  Grade int 
-Alter PROCEDURE InsertQuestion
+create  PROCEDURE InsertQuestion
 	@QuestionContent VARCHAR(500)
 	,@Type VARCHAR(20)
 	,@TopicName VARCHAR(50)
 	,@Course_Id VARCHAR(4)
-    ,@Grade varchar(2)
+  
 AS
 BEGIN
 	DECLARE @sql NVARCHAR(MAX)
@@ -57,12 +52,11 @@ BEGIN
     + QUOTENAME(@QuestionContent, '''') 
     + ', ' + QUOTENAME(@Type, '''') 
     + ', ' + QUOTENAME(@TopicName, '''')
-    + ', ' + @Course_Id 
-    + ', ' + @Grade +')'
+    + ', ' + @Course_Id +')'
 
 	EXEC (@sql)
 END
-InsertQuestion 	'lkejfl?','MCQ','CSS Styling','1','1'
+InsertQuestion 	'lkejfl?','MCQ','CSS Styling','1'
 
 --  (3)  Update 
 
@@ -81,35 +75,46 @@ BEGIN
 	SET @sql = 'update  Question set ' + @columnName + ' =  ''' + @columnValue + '''  WHERE Q_Id = ' + @SerchedId;
 END
 
-EXEC (@sql) UpdateQuestionById '20'
-	,'Q_Id'
-	,'10'
+EXEC (@sql) 
+
+--  UpdateQuestionById '20','Q_Id'	,'10'
+
+	
 
 --  (4) Delete
-CREATE PROC QuestionDelete @ColumnName VARCHAR(50)
+alter PROC QuestionDelete @ColumnName VARCHAR(50)
 	,@ColumnValue VARCHAR(700)
 AS
 DECLARE @sql VARCHAR(max)
-declare @Q_Id varchar (3)
+
 
 IF (ISNUMERIC(@ColumnValue) = 1)
 BEGIN
-    select @Q_Id = Q_Id from Question where @ColumnName = @ColumnValue                    ----------- NOT Completed  Must Select Q_Id 
+                      ----------- NOT Completed  Must Select Q_Id 
 	SET @sql = 'delete from Question where ' + @ColumnName + ' = ' + @ColumnValue;          ----------- then Delete Choice
-    exec DeleteChoiceByQ_ID
+   
 END
 ELSE
 BEGIN
-	SET @sql = 'delete from Question where ' + @ColumnName + ' =  ''' + @ColumnName + ''' ';
-        
+	SET @sql = 'delete from Question where ' + @ColumnName + ' =  ''' + @ColumnName + ''' ';   
 END
+EXEC (@sql) 
+select *from Question
 
-EXEC (@sql) QuestionDelete 'Q_Id'
+BEGIN TRANSACTION;
+QuestionDelete 'Topic_Name', 'Command Line Basics'
+rollback
+-- If you want to roll back the changes, use ROLLBACK instead of COMMIT
+commit
+QuestionDelete 
+
+
+QuestionDelete 'Q_Id'
 	,'10'
 
 
 -- Delete By ID 
-alter PROC QuestionDelete_By_Id @Q_Id  VARCHAR(5)
+create PROC QuestionDelete_By_Id @Q_Id  VARCHAR(5)
 	
 AS
 declare @type varchar (10)
@@ -132,8 +137,8 @@ QuestionDelete_By_Id '19'
 --(1) select 
 
 -- (A) Dynamic Select 
-
-CREATE PROC SelectChoice @columnName VARCHAR(50)
+CREATE PROC SelectChoice 
+    @columnName VARCHAR(50)
 	,@columnValue VARCHAR(700)
 AS
 DECLARE @sql NVARCHAR(MAX)
@@ -153,7 +158,6 @@ SelectChoice 'Correct_ans','1'
 
 -----------------------
 -- (B) Select By Q_ID
-
 
 CREATE PROC SelectChoiceById
     @Q_Id VARCHAR(5)
@@ -175,6 +179,7 @@ DECLARE @sql NVARCHAR(MAX)
 
 
 EXEC (@sql) 
+SelectChoiceById_Correct_Ans '41'
 
 ----------------------------------------------------------------------------------------------
 
@@ -191,11 +196,12 @@ BEGIN
 
 	EXEC (@sql)
 END 
-
-AddChoice '2'
+begin transaction
+AddChoice '41'
 	,'sdfsdf'
-	,'1' 
-
+	,'0' 
+    select * from Choice where Q_Id= 41
+    rollback
 
 
 --(3) Update 
@@ -215,20 +221,22 @@ BEGIN
 	SET @sql = 'update  Choice set ' + @columnName + ' =  ''' + @columnValue + ''' WHERE Q_Id = ' + @QuestionId + ' AND Choice_Content =  ''' + @ChoiceContent + '''';
 END
 
-EXEC (@sql) UpdateChoice '1'
-	,'Hyper Text Making Links
-'
-	,'Correct_Ans'
+EXEC (@sql) 
+
+    UpdateChoice '41'
 	,'0'
+	,'Choice_Content'
+	,'cd'
+
 
 SELECT *
 FROM Choice
-WHERE Choice_Content = 'Hyper Text Making Links
-'
+
 
 --(4) Delete 
 
 -- (A) Delete Choice By Primary key
+
 
 CREATE PROC DeleteChoice @QuestionId VARCHAR(100)
 	,@ChoiceContent VARCHAR(700)
@@ -253,7 +261,7 @@ END
 
 EXEC(@sql)
 
-
+DeleteChoiceByQ_ID '41'
 
 
 -------------------------------------------------------------- Table  T,F ------------------------------
@@ -275,6 +283,7 @@ BEGIN
 END
 
 EXEC (@sql)
+
 
 --(A) Select T_F By Q_ID 
 
@@ -301,34 +310,36 @@ BEGIN
 	SET @sql = 'INSERT INTO TF VALUES (' + @QuestionId + ', ' + @IsCorrect + ')'
 
 	EXEC (@sql)
-END AddTF '4'
-	,'0'
-
+END
+-----------------------------------------
 --  (3)  Update 
-CREATE PROC UpdateTF @QuestionId VARCHAR(5)
-	,@IsTrue VARCHAR(1)
+
+
+---------------------------
+CREATE PROC UpdateTF_By_Q_Id @QuestionId VARCHAR(5)
 	,@columnName VARCHAR(50)
 	,@columnValue VARCHAR(5)
 AS
 DECLARE @sql NVARCHAR(MAX)
 
-SET @sql = 'update  TF set ' + @columnName + ' = ' + @columnValue + '  WHERE Q_Id = ' + @QuestionId + ' AND Correct_Ans =  ' + @IsTrue;
+SET @sql = 'update  TF set ' + @columnName + ' = ' + @columnValue + '  WHERE Q_Id = ' + @QuestionId ;
 
-EXEC (@sql) UpdateTF '2'
-	,'1'
+EXEC (@sql) 
+selectTF_By_Id '52'
+UpdateTF_By_Q_Id '52'
+	
 	,'Correct_Ans'
-	,'0'
+	,'1'
 
 --  (4) Delete
 CREATE PROC DeleteTF @QuestionId VARCHAR(4)
-	,@IsTrue VARCHAR(1)
+	
 AS
 DECLARE @sql NVARCHAR(MAX)
 
 BEGIN
-	SET @sql = 'delete  TF   WHERE Q_Id = ' + @QuestionId + ' AND Correct_Ans =  ' + @IsTrue;
+	SET @sql = 'delete  TF   WHERE Q_Id = ' + @QuestionId ;
 END
-
 EXEC (@sql)
 
 -- Delete By Question ID
@@ -366,11 +377,11 @@ BEGIN
 	SET @sql = 'SELECT * FROM Stu_Exam_Question WHERE ' + @columnName + ' = ''' + @columnValue + '''';
 END
 
-EXEC (@sql) Select_Quest_Exam_Stu 'Q_Id'
-	,'7'
+EXEC (@sql) 
 
 -----------------------------------------2 select question  by Student _ Id And Exam Number ----------------------------
-ALTER PROC Select_Quest_By_Stu_Exam @Exam_Num VARCHAR(10)
+create PROC Select_Quest_By_Stu_Exam 
+    @Exam_Num VARCHAR(10)
 	,@Stu_Id VARCHAR(20)
 AS
 DECLARE @sql NVARCHAR(MAX)
@@ -379,8 +390,10 @@ SET @sql = 'SELECT * FROM Stu_Exam_Question   WHERE St_Id = ' + @Stu_Id + ' AND 
 
 EXEC (@sql) 
 
+Select_Quest_By_Stu_Exam  '1','5'
+select * from  Stu_Exam_Question 
 -----------------------------------------2 select question  by Student _ Id And Exam Number And Q_Id ----------------------------
-alter PROC Select_Quest_By_Stu_Exam_Quest
+create PROC Select_Quest_By_Stu_Exam_Quest
 	@Stu_Id VARCHAR(20)
    , @Exam_Num VARCHAR(10)
     ,@Q_Id VARCHAR(20)
@@ -392,28 +405,31 @@ SET @sql = 'SELECT * FROM Stu_Exam_Question   WHERE St_Id = ' + @Stu_Id + ' AND 
 
 EXEC (@sql) 
 
-Select_Quest_By_Stu_Exam_Quest '1' , '2' ,'5'
 
 
 -----------------------------------------2 INsert  Quest_Exam_Stu  --------------------------------------------------------
-ALTER PROCEDURE Insert_Answerd_Question @student_Id VARCHAR(10)
+create  PROCEDURE Insert_Answerd_Question 
+@student_Id VARCHAR(10)
 	,@Exam_Num VARCHAR(10)
 	,@Q_Id VARCHAR(10)
 	,@Answer VARCHAR(300)
+    ,@Grade int 
 AS
 BEGIN
 	DECLARE @sql NVARCHAR(MAX)
 
-	SET @sql = 'INSERT INTO Stu_Exam_Question VALUES (' + @student_Id + ', ' + @Exam_Num + ', ' + @Q_Id + ', ' + QUOTENAME(@Answer, '''') + ')'
+	SET @sql = 'INSERT INTO Stu_Exam_Question VALUES (' + @student_Id + ', ' + @Exam_Num + ', ' + @Q_Id + ', ' + QUOTENAME(@Answer, '''') + ', ' +CONVERT(varchar(2),@Grade)  + ')'
 
 	EXEC (@sql)
-END Insert_Answerd_Question '3'
-	,'2'
+END Insert_Answerd_Question '5'
+	,'1'
 	,'10'
 	,'lsdkjf'
+    ,1
+    select * from  Stu_Exam_Question 
 
 -----------------------------------------3 Update   Quest_Exam_Stu  --------------------------------------------------------
-ALTER PROC Update_Answerd_Question @Serched_Col VARCHAR(20)
+create PROC Update_Answerd_Question @Serched_Col VARCHAR(20)
 	,@Serched_Val VARCHAR(300)
 	,@columnName VARCHAR(50)
 	,@columnValue VARCHAR(300)
@@ -428,14 +444,11 @@ ELSE
 BEGIN
 	SET @sql = 'update  Stu_Exam_Question set ' + @columnName + ' =  ''' + @columnValue + '''  WHERE ' + @Serched_Col + ' = ' + @Serched_Val;
 END
+EXEC (@sql) 
 
-EXEC (@sql) Update_Answerd_Question 'Exam_Num'
-	,'2'
-	,'Answer'
-	,'ahmed'
 
 -----------------------------------------------Delete-----------------------------------
-ALTER PROC Delete_answered_Question_By_St_Id_Exma_Num @St_Id VARCHAR(4)
+create PROC Delete_answered_Question_By_St_Id_Exma_Num @St_Id VARCHAR(4)
 	,@Exam_Num VARCHAR(4)
 AS
 DECLARE @sql NVARCHAR(MAX)
@@ -444,27 +457,47 @@ BEGIN
 	SET @sql = 'delete  Stu_Exam_Question   WHERE St_Id = ' + @St_Id + ' AND Exam_Num =  ' + @Exam_Num;
 END
 
-EXEC (@sql) Delete_answered_Question_By_St_Id_Exma_Num '13'
-	,'2'
+EXEC (@sql) 
+----------------------------------------
+create PROC Delete_answered_Question_By_St_Id_Exma_Num_Q_Id @St_Id VARCHAR(4)
+	,@Exam_Num VARCHAR(4)
+    ,@Q_Id varchar (3)
+AS
+DECLARE @sql NVARCHAR(MAX)
+
+BEGIN
+	SET @sql = 'delete  Stu_Exam_Question   WHERE St_Id = ' + @St_Id + ' AND Exam_Num =  ' + @Exam_Num + ' AND Q_Id =  ' + @Q_Id;
+END
+
+EXEC (@sql)
+
 
 --------------------------------------------Generate -- Exam-------------------------------
-CREATE TABLE Exam_Contain_Questions (
-	Exam_Num INT FOREIGN KEY REFERENCES Exam(Ex_Num)
-	,Q_Id INT FOREIGN KEY REFERENCES Question(Q_Id)
-	,PRIMARY KEY (
-		Q_Id
-		,Exam_Num
-		)
+
+-- proc to Generate Questions Use in Generate Exam
+
+create PROC Select_Question_For_Exam @type VARCHAR(5)
+	,@Num_Of_Questions VARCHAR(2)
+	,@Course_Id VARCHAR(3)
+AS
+DECLARE @sql NVARCHAR(MAX)
+
+SET @sql = 'SELECT top(' + @Num_Of_Questions + ') * FROM Question WHERE Cr_Id  = ' + @Course_Id + ' AND [type] = ''' + @type + ''' order by NEWID()'
+
+EXEC (@sql)
+
+INSERT INTO Exam_Contain_Questions (
+	[Exam_Num]
+	,[Q_Id]
 	)
+SELECT 5
+	,Q_Id
+FROM Question
 
-DECLARE @Exam INT
 
-EXEC GenerateExam @MCQ_Num = '3'
-	,@TF_Num = '1'
-	,@Course_Name = 'HTML and CSS'
-	,@Exam_Num = @Exam OUTPUT
-
-ALTER PROC GenerateExam @MCQ_Num VARCHAR(3)
+------------------------------------GenerateExam proc -------------------------
+create PROC GenerateExam
+    @MCQ_Num VARCHAR(3)
 	,@TF_Num VARCHAR(3)
 	,@Course_Name VARCHAR(40)
 	,@Exam_Num INT OUTPUT
@@ -509,45 +542,52 @@ EXEC Select_Question_For_Exam 'TF'
 	,@Course_Id
 
 --select  @Question_Exam_Ids = Q_Id from @Return_Exam
-INSERT INTO Exam_Contain_Questions (
+INSERT INTO Exam_Questions (
 	Exam_Num
 	,Q_Id
 	)
-SELECT @Course_Id
+SELECT @Exam_Num
 	,Q_Id
 FROM @Return_Exam
 
 SELECT *
 FROM @Return_Exam
 
-ALTER PROC Select_Question_For_Exam @type VARCHAR(5)
-	,@Num_Of_Questions VARCHAR(2)
-	,@Course_Id VARCHAR(3)
-AS
-DECLARE @sql NVARCHAR(MAX)
+------------------------------------------- End of Generate Exam -----------------------
 
-SET @sql = 'SELECT top(' + @Num_Of_Questions + ') * FROM Question WHERE Cr_Id  = ' + @Course_Id + ' AND [type] = ''' + @type + ''' order by NEWID()'
 
-EXEC (@sql)
 
-INSERT INTO Exam_Contain_Questions (
-	[Exam_Num]
-	,[Q_Id]
-	)
-SELECT 5
-	,Q_Id
-FROM Question
-
-DELETE
-FROM Exam_Contain_Questions
 
 
 	--------------------------------------------
-stored of last report 
+
+-- stored of last report 
 
  create proc Select_Student_Answer @Student_Id varchar(4) , @Exam_Num varchar(3)
  as 
- declare @Exam_Ansewrs table (answer varchar(700))
- insert into @Exam_Ansewrs (answer) select  Answer from Stu_Exam_Question where St_Id = @Student_Id and Exam_Num = @Exam_Num
- select * from  @Exam_Ansewrs
+ declare @Exam_Ansewrs table (answer varchar(700) , Question_Type varchar (30)) 
+ insert into @Exam_Ansewrs (answer,Question_Type) select a.Answer , Q.[type] from  Stu_Exam_Question  a inner join Question Q on Q.Q_Id = a.Q_Id
+ where a.St_Id = @Student_Id and a.Exam_Num = @Exam_Num
+ -- cursor for Updating the Answer to True or False 
+ Declare Answer_Cursor Cursor 
+ for select answer , Question_Type from @Exam_Ansewrs 
+ declare @ans varchar(300) ,@Q_Type varchar(30)
+ open Answer_Cursor
+ fetch Next from Answer_Cursor into @ans , @Q_Type
+ while @@FETCH_STATUS=0
+	begin
+ if @ans = '1' and @Q_Type = 'TF'
+ begin 
+update  @Exam_Ansewrs set answer = 'True' where current of Answer_Cursor
+ end
+  if @ans = '0' and @Q_Type = 'TF'
+ begin 
+update  @Exam_Ansewrs set answer = 'False' where current of Answer_Cursor
+ end
+ fetch Answer_Cursor into  @ans , @Q_Type		
+	end
  
+close Answer_Cursor
+deallocate Answer_Cursor
+ select * from @Exam_Ansewrs
+---------------------------------End of proc 

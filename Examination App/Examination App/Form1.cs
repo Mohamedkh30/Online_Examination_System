@@ -16,17 +16,18 @@ namespace Examination_App
         {
             InitializeComponent();
             this.BackgroundImageLayout = ImageLayout.Stretch;
+           
         }
 
         private void Insert_Course_Click(object sender, EventArgs e)
         {
-            Topic Topic_Form = new Topic();
+            TopicForm Topic_Form = new TopicForm();
             Topic_Form.ShowDialog();
         }
 
         private void Update_Info_Click(object sender, EventArgs e)
         {
-            Exam Exam_Form = new Exam();
+            ExamForm Exam_Form = new ExamForm();
             Exam_Form.ShowDialog();
         }
     }

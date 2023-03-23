@@ -15,6 +15,8 @@ namespace Examination_App
         public GradeForm()
         {
             InitializeComponent();
+            TopicForm Topic = new TopicForm();
+            Topic.Show();
         }
     }
 }
