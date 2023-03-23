@@ -19,9 +19,6 @@ namespace Examination_App
         {
             this.Departments = new HashSet<Department>();
             this.Ins_Dept_Cr = new HashSet<Ins_Dept_Cr>();
-            this.Ins_Dept_Cr1 = new HashSet<Ins_Dept_Cr>();
-            this.Ins_Dept_Cr2 = new HashSet<Ins_Dept_Cr>();
-            this.Ins_Dept_Cr3 = new HashSet<Ins_Dept_Cr>();
         }
     
         public int Ins_Id { get; set; }
@@ -33,11 +30,5 @@ namespace Examination_App
         public virtual ICollection<Department> Departments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ins_Dept_Cr> Ins_Dept_Cr { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ins_Dept_Cr> Ins_Dept_Cr1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ins_Dept_Cr> Ins_Dept_Cr2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ins_Dept_Cr> Ins_Dept_Cr3 { get; set; }
     }
 }

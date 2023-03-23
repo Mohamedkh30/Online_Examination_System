@@ -53,6 +53,37 @@
             this.time.TabIndex = 26;
             this.time.Text = "60";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(93, 269);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(80, 20);
+            this.radioButton1.TabIndex = 28;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Choice 1";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(673, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(628, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 16);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "60";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -157,6 +188,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.time);

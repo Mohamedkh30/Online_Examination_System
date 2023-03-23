@@ -76,7 +76,7 @@ namespace Examination_App
             }
 
 
-     }
+        }
 
         private void ParralelMethod() {
             while (true)
@@ -263,7 +263,7 @@ namespace Examination_App
         private void Submit_Click(object sender, EventArgs e)
         {
                         ExitExam = true; 
-                    
+
         }
     }
 }

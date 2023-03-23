@@ -74,19 +74,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Choice.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Course.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="dataContainer.cs" />
     <Compile Include="Department.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="displayCoursesAndGrades_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Exam.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ExamForm.cs">
       <SubType>Form</SubType>
@@ -94,14 +92,18 @@
     <Compile Include="ExamForm.Designer.cs">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="UpdateDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>UpdateDataForm.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerateExam_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+    <Compile Include="InstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructorForm.Designer.cs">
+      <DependentUpon>InstructorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GradeForm.cs">
       <SubType>Form</SubType>
@@ -109,23 +111,11 @@
     <Compile Include="GradeForm.Designer.cs">
       <DependentUpon>GradeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InsertCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertCourse.Designer.cs">
-      <DependentUpon>InsertCourse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InsertQuestionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertQuestionForm.Designer.cs">
-      <DependentUpon>InsertQuestionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Instructor.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Ins_Dept_Cr.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -133,30 +123,20 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model1.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
+    <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Model2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
     <Compile Include="NewAccount.cs">
       <SubType>Form</SubType>
@@ -167,100 +147,79 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuestionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuestionForm.Designer.cs">
-      <DependentUpon>QuestionForm.cs</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectAllCourses_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectAllExams_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectAllStudents_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectAllTopics_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectCourseById_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectCourseByName_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectCourseExams_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCourseTopics_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectDepartmentById_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectDepartmentByName_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectDepartments_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectExamById_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectInsDepCrRelationByCr_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectInsDepCrRelationByDep_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectInsDepCrRelationByIns_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectInsDepCrRelations_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectInstructorById_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectInstructorByName_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectInstructors_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectQuestionByExam_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectStuCrRelationByCr_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectStuCrRelationByStu_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectStuCrRelations_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectStudentByEmail_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectStudentByEmPass_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SelectStudentById_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SelectStudentsByDeptId_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Select_Student_Answer_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
@@ -269,13 +228,13 @@
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Stu_Courses.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Topic.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TopicForm.cs">
       <SubType>Form</SubType>
@@ -283,17 +242,14 @@
     <Compile Include="TopicForm.Designer.cs">
       <DependentUpon>TopicForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateQuestionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateQuestionForm.Designer.cs">
-      <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateDataForm.resx">
+      <DependentUpon>UpdateDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructorForm.resx">
+      <DependentUpon>InstructorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GradeForm.resx">
       <DependentUpon>GradeForm.cs</DependentUpon>
@@ -318,6 +274,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
@@ -328,19 +285,12 @@
     <EmbeddedResource Include="TopicForm.resx">
       <DependentUpon>TopicForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateQuestionForm.resx">
-      <DependentUpon>UpdateQuestionForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <EntityDeploy Include="Model2.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model2.edmx.diagram">
-      <DependentUpon>Model2.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -357,36 +307,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\vecteezy_modern-futuristic-neon-purple-background_.jpg" />
+    <None Include="Resources\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model1.tt">
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

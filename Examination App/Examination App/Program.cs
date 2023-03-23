@@ -16,7 +16,7 @@ namespace Examination_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuestionForm());
+            Application.Run(new LoginForm());
         }
     }
 }

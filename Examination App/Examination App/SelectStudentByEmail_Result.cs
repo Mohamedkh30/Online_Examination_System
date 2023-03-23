@@ -10,16 +10,13 @@
 namespace Examination_App
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Ins_Dept_Cr
+    public partial class SelectStudentByEmail_Result
     {
-        public int Ins_Id { get; set; }
-        public int Dept_id { get; set; }
-        public int Cr_Id { get; set; }
-    
-        public virtual Course Course { get; set; }
-        public virtual Department Department { get; set; }
-        public virtual Instructor Instructor { get; set; }
+        public int St_Id { get; set; }
+        public string St_Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> Dept_Id { get; set; }
     }
 }

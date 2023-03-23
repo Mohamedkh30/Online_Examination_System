@@ -766,3 +766,27 @@ AS
 			SELECT 'Failed to get your answers!'
 		END CATCH
 	END
+--------------------------------------------------------------------------------------------------------------------------------------------------
+create proc AuthStudent @email varchar(50),@pass varchar(50) 
+as
+declare @InsEmail varchar(50),@InsPass varchar(50)
+		select @InsEmail=Email,@InsPass=[Password] from Student
+		where Email=@email
+
+if(@InsEmail is null)
+	begin
+		select 'Email not registered'
+	end
+else
+	begin
+		if(@InsPass = @pass)
+			begin
+				select 'Login Successful'					--replace with 1?
+			end
+		else
+			begin
+				select 'Login Failed'						--replace with 0?
+			end
+	end
+
+-- AuthStudent 'ahmad.ali@example.com','password1234'
