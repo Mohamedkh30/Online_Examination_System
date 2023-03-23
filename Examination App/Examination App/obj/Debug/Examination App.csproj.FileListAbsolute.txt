@@ -34,3 +34,25 @@ F:\learn\iti\3)backend\advanced database\Project\New folder\Examination App\Exam
 F:\learn\iti\3)backend\advanced database\Project\New folder\Examination App\Examination App\obj\Debug\Examination App.exe
 F:\learn\iti\3)backend\advanced database\Project\New folder\Examination App\Examination App\obj\Debug\Examination App.pdb
 F:\learn\iti\3)backend\advanced database\Project\New folder\Examination App\Examination App\bin\Debug\Examination App.pdb
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\Examination App.exe.config
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\Examination App.exe
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\Examination App.pdb
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\EntityFramework.dll
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\EntityFramework.xml
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.ExamForm.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.InstructorForm.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.GradeForm.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.LoginForm.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.NewAccount.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.Properties.Resources.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.StudentForm.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination_App.TopicForm.resources
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.csproj.CopyComplete
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.exe
+C:\Users\HP\Desktop\Online_Examination_System\Project\Examination App\Examination App\obj\Debug\Examination App.pdb

@@ -47,9 +47,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 20);
+            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
@@ -59,42 +60,47 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 81);
+            this.label2.Location = new System.Drawing.Point(16, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // EmailTextBox
             // 
             this.EmailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailTextBox.Location = new System.Drawing.Point(25, 43);
+            this.EmailTextBox.Location = new System.Drawing.Point(19, 35);
+            this.EmailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(197, 22);
+            this.EmailTextBox.Size = new System.Drawing.Size(148, 20);
             this.EmailTextBox.TabIndex = 2;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(25, 104);
+            this.PasswordTextBox.Location = new System.Drawing.Point(19, 84);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(197, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(149, 20);
             this.PasswordTextBox.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(244, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(183, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 151);
+            this.pictureBox1.Size = new System.Drawing.Size(149, 123);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // SignInBtn
             // 
-            this.SignInBtn.Location = new System.Drawing.Point(25, 198);
+            this.SignInBtn.Location = new System.Drawing.Point(19, 161);
+            this.SignInBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SignInBtn.Name = "SignInBtn";
-            this.SignInBtn.Size = new System.Drawing.Size(76, 28);
+            this.SignInBtn.Size = new System.Drawing.Size(57, 23);
             this.SignInBtn.TabIndex = 5;
             this.SignInBtn.Text = "Sign In";
             this.SignInBtn.UseVisualStyleBackColor = true;
@@ -102,9 +108,10 @@
             // 
             // SignUpBtn
             // 
-            this.SignUpBtn.Location = new System.Drawing.Point(134, 198);
+            this.SignUpBtn.Location = new System.Drawing.Point(100, 161);
+            this.SignUpBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SignUpBtn.Name = "SignUpBtn";
-            this.SignUpBtn.Size = new System.Drawing.Size(88, 28);
+            this.SignUpBtn.Size = new System.Drawing.Size(66, 23);
             this.SignUpBtn.TabIndex = 6;
             this.SignUpBtn.Text = "Sign Up";
             this.SignUpBtn.UseVisualStyleBackColor = true;
@@ -116,9 +123,10 @@
             this.StudentRadioButton.BackColor = System.Drawing.Color.Transparent;
             this.StudentRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.StudentRadioButton.ForeColor = System.Drawing.Color.White;
-            this.StudentRadioButton.Location = new System.Drawing.Point(49, 135);
+            this.StudentRadioButton.Location = new System.Drawing.Point(37, 110);
+            this.StudentRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StudentRadioButton.Name = "StudentRadioButton";
-            this.StudentRadioButton.Size = new System.Drawing.Size(94, 24);
+            this.StudentRadioButton.Size = new System.Drawing.Size(82, 21);
             this.StudentRadioButton.TabIndex = 7;
             this.StudentRadioButton.TabStop = true;
             this.StudentRadioButton.Text = "Student";
@@ -131,9 +139,10 @@
             this.InstructorRadioButton.Checked = true;
             this.InstructorRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.InstructorRadioButton.ForeColor = System.Drawing.Color.White;
-            this.InstructorRadioButton.Location = new System.Drawing.Point(49, 165);
+            this.InstructorRadioButton.Location = new System.Drawing.Point(37, 134);
+            this.InstructorRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.InstructorRadioButton.Name = "InstructorRadioButton";
-            this.InstructorRadioButton.Size = new System.Drawing.Size(111, 24);
+            this.InstructorRadioButton.Size = new System.Drawing.Size(95, 21);
             this.InstructorRadioButton.TabIndex = 8;
             this.InstructorRadioButton.TabStop = true;
             this.InstructorRadioButton.Text = "Instructor";
@@ -141,11 +150,11 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(455, 250);
+            this.ClientSize = new System.Drawing.Size(341, 203);
             this.Controls.Add(this.InstructorRadioButton);
             this.Controls.Add(this.StudentRadioButton);
             this.Controls.Add(this.SignUpBtn);
@@ -155,6 +164,8 @@
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
