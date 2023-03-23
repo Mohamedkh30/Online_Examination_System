@@ -12,24 +12,34 @@ namespace Examination_App
 {
     public partial class NewAccount : Form
     {
-        //SqlConnection sqlConnection;
-        //SqlCommand sqlCommand;
         private bool dragging;
         private Point lastLocation;
+        private Examination_DBEntities Context;
+        Student New_Student;
+        Instructor New_Instructor;
+
         public NewAccount()
         {
             InitializeComponent();
             PositionDropList.Focus();
-            //sqlConnection= new SqlConnection("Data Source=AHMED-HAMZA\\SQLEXPRESS;Initial Catalog=Examination_DB_Old;Integrated Security=True");
-            //sqlCommand = new SqlCommand();
-            //sqlCommand.Connection = sqlConnection;
-            //sqlCommand.CommandText = "SELECT * FROM Employee";
-            //sqlCommand.CommandType = CommandType.StoredProcedure;
-
-            #region connected mode
-
-            #endregion
             dragging = false;
+
+            Context = new Examination_DBEntities();
+        }
+        private void NewAccount_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var Depts = Context.SelectDepartments();
+                foreach (var dept in Depts)
+                {
+                    DeptBox.Items.Add(dept.Dept_Name);
+                }
+            }
+            catch
+            {
+                DeptBox.Items.Add("No Department Found!");
+            }
         }
 
         /***************************************************************************************/
@@ -37,11 +47,40 @@ namespace Examination_App
         /***************************************************************************************/
         private void CreateAccBtn_Click(object sender, EventArgs e)
         {
-            if (PositionDropList.Text == "" || NameBox.Text == "" || DeptBox.Text == "" || EmailBox.Text == "" || PasswordBox.Text == "")
+            try
             {
-                MessageBox.Show("Please Enter Valid Information!", "Warning");
+                if (PositionDropList.Text == "" || NameBox.Text == "" || DeptBox.Text == "" || EmailBox.Text == "" || PasswordBox.Text == "")
+                {
+                    MessageBox.Show("Please Enter Valid Information!", "Warning");
+                }
+                else if (PositionDropList.Text == "Student")
+                {
+                    New_Student = new Student();
+                    New_Student.St_Name = NameBox.Text;
+                    New_Student.Department.Dept_Name = DeptBox.Text;
+                    New_Student.Email = EmailBox.Text;
+                    New_Student.Password = PasswordBox.Text;
+
+                    Context.Students.Add(New_Student);
+                }
+                else
+                {
+                    New_Instructor = new Instructor();
+                    New_Instructor.Ins_Name = NameBox.Text;
+                    New_Instructor.Ins_Email = EmailBox.Text;
+                    New_Instructor.Ins_Password = PasswordBox.Text;
+
+                    Context.Instructors.Add(New_Instructor);
+                }
+                Context.SaveChanges();
+                MessageBox.Show("Success!", "Done");
+            }
+            catch
+            {
+                MessageBox.Show("Failed!", "Warning");
             }
         }
+
 
         private void CreateAccBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -96,5 +135,6 @@ namespace Examination_App
                 this.Update();
             }
         }
+
     }
 }
