@@ -74,6 +74,13 @@
     <Compile Include="ExamForm.Designer.cs">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>UpdateDataForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InstructorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +226,9 @@
     </Compile>
     <EmbeddedResource Include="ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDataForm.resx">
+      <DependentUpon>UpdateDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InstructorForm.resx">
       <DependentUpon>InstructorForm.cs</DependentUpon>
